@@ -1,0 +1,769 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: #1f2937;
+    background: #f8fafc;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 90%;
+    max-width: 1150px;
+    margin: auto;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 75px;
+
+    background: rgba(255,255,255,0.95);
+
+    backdrop-filter: blur(10px);
+
+    z-index: 1000;
+
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+}
+
+.nav-container {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    color: #123c69;
+}
+
+.logo { 
+display: flex; 
+align-items: center; 
+gap: 25px; 
+} 
+
+.logo img { 
+width: 70px; 
+} 
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-menu a {
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #00f178;
+}
+
+
+/* HAMBURGER */
+
+.hamburger {
+    display: none;
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+
+    width: 30px;
+    height: 3px;
+
+    margin: 5px;
+
+    background: #09a440;
+
+    border-radius: 10px;
+
+    transition: 0.3s;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    background-image:
+        url("image/backround.jpeg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(5,20,40,0.68);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-text {
+    max-width: 700px;
+
+    color: white;
+}
+
+.welcome {
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    color: #8dffbd;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: clamp(42px,7vw,78px);
+
+    line-height: 1.1;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #8dff9c;
+}
+
+.hero p {
+    max-width: 650px;
+
+    font-size: 18px;
+    line-height: 1.8;
+
+    color: #e5e7eb;
+
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+
+    padding: 13px 25px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: #83ff9a;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #1dd833;
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    border: 1px solid white;
+    color: white;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: #0caa23;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-title {
+    text-align: center;
+
+    max-width: 650px;
+
+    margin: 0 auto 55px;
+}
+
+.section-title span {
+    color: #25eb5d;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.section-title h2 {
+    margin: 10px 0;
+
+    color: #37fd72;
+
+    font-size: 38px;
+}
+
+.section-title p {
+    color: #64748b;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   GURU
+========================= */
+
+.guru-section {
+    padding: 100px 0;
+}
+
+.guru-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap: 25px;
+}
+
+.guru-card {
+    background: rgba(255, 255, 255, 0.954);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow:
+        0 8px 30px rgba(0,0,0,0.07);
+
+    transition: 0.35s;
+
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.guru-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.guru-card:hover {
+    transform: translateY(-10px);
+}
+
+.guru-image {
+    height: 270px;
+
+    overflow: hidden;
+}
+
+.guru-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.5s;
+}
+
+.guru-card:hover img {
+    transform: scale(1.07);
+}
+
+.guru-info {
+    padding: 22px;
+}
+
+.guru-info h3 {
+    color: #03ff5f;
+
+    font-size: 19px;
+
+    margin-bottom: 7px;
+}
+
+.mapel {
+    display: block;
+
+    color: #2563eb;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    margin-bottom: 13px;
+}
+
+.guru-info p {
+    color: #64748b;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   VISI MISI
+========================= */
+
+.visi-section {
+    padding: 100px 0;
+
+    background: white;
+}
+
+.visi-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap: 30px;
+}
+
+.visi-card {
+    padding: 40px;
+
+    border-radius: 20px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    transition: 0.3s;
+}
+
+.visi-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.08);
+}
+
+.visi-icon {
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    border-radius: 15px;
+
+    background: #dbeafe;
+
+    font-size: 28px;
+}
+
+.visi-card h3 {
+    color: #123c69;
+
+    font-size: 25px;
+
+    margin-bottom: 15px;
+}
+
+.visi-card p {
+    color: #64748b;
+
+    line-height: 1.8;
+}
+
+.visi-card ul {
+    padding-left: 20px;
+
+    color: #64748b;
+
+    line-height: 2;
+}
+
+
+/* =========================
+   KEGIATAN
+========================= */
+
+.kegiatan-section {
+    padding: 100px 0;
+
+    background: #f8fafc;
+}
+
+.kegiatan-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap: 30px;
+}
+
+.kegiatan-card {
+    overflow: hidden;
+
+    background: white;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,0.07);
+
+    transition: 0.35s;
+}
+
+.kegiatan-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.12);
+}
+
+.kegiatan-card img {
+    width: 100%;
+
+    height: 260px;
+
+    object-fit: cover;
+
+    transition: 0.5s;
+}
+
+.kegiatan-card:hover img {
+    transform: scale(1.04);
+}
+
+.kegiatan-info {
+    padding: 25px;
+}
+
+.kegiatan-info span {
+    color: #2563eb;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+.kegiatan-info h3 {
+    color: #123c69;
+
+    font-size: 22px;
+
+    margin: 8px 0;
+}
+
+.kegiatan-info p {
+    color: #64748b;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+.contact {
+    background-color: var(--soft-cream);
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+
+.contact-content {
+    position: sticky;
+    top: 110px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    gap: 22px;
+}
+
+.contact-card {
+    padding: 20px;
+    border: 1px solid #b8d8c0;
+    border-radius: 15px;
+    background-color: #eaf4ec;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.contact-card:hover {
+    border-color: var(--light-brown);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-6px);
+}
+
+.contact-icon {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--cream);
+    font-size: 23px;
+}
+
+.contact-card h3 {
+    margin-bottom: 8px;
+    color: #010201;
+    font-size: 18px;
+}
+
+.contact-card p,
+.contact-card a {
+    color: #09090e;
+    font-size: 14px;
+}
+
+.contact-card a {
+    text-decoration: none;
+}
+
+.contact-card a:hover {
+    color: #95ad9d;
+}
+
+.contact-content h2 {
+    color: #121814;
+}
+
+.contact-content p {
+    color: #0f0e0e;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #0f2742;
+
+    color: white;
+
+    padding: 35px 0;
+}
+
+.footer-content {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.footer-content h3 {
+    margin-bottom: 7px;
+}
+
+.footer-content p {
+    color: #cbd5e1;
+
+    font-size: 13px;
+}
+
+.copyright {
+    text-align: right;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width:1000px) {
+
+    .guru-container {
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+}
+
+
+@media (max-width:700px) {
+
+    .navbar {
+        height: 65px;
+    }
+
+    .logo {
+        font-size: 17px;
+    }
+
+    .nav-menu {
+        position: absolute;
+
+        top: 65px;
+        left: 0;
+
+        width: 100%;
+
+        background: white;
+
+        flex-direction: column;
+
+        gap: 0;
+
+        padding: 10px 0;
+
+        transform: translateY(-150%);
+
+        transition: 0.4s;
+    }
+
+    .nav-menu.active {
+        transform: translateY(0);
+    }
+
+    .nav-menu a {
+        width: 100%;
+
+        padding: 15px;
+
+        text-align: center;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .guru-section,
+    .visi-section,
+    .kegiatan-section {
+        padding: 75px 0;
+    }
+
+    .section-title h2 {
+        font-size: 30px;
+    }
+
+    .guru-container,
+    .visi-container,
+    .kegiatan-container {
+        grid-template-columns: 1fr;
+    }
+
+    .guru-image {
+        height: 300px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 15px;
+    }
+
+    .copyright {
+        text-align: center;
+    }
+
+}
+
+
+/* =========================
+   HAMBURGER ANIMATION
+========================= */
+
+.hamburger.active span:nth-child(1) {
+    transform:
+        rotate(45deg)
+        translate(6px,6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform:
+        rotate(-45deg)
+        translate(6px,-6px);
+}
